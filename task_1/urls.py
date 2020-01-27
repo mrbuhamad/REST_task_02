@@ -21,4 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('flights/', views.FlightsList.as_view(), name="flights-list"),
     path('bookings/', views.BookingsList.as_view(), name="bookings-list"), 
+    path('api/bookings/<int:booking_id>/', views.BookingDetailView.as_view(),name="booking-details"),
+    path('api/bookings/<int:booking_id>/update', views.BookingUpdateView.as_view(),name="update-booking"),
+     path('api/bookings/<int:booking_id>/delete', views.BookingdeleteView.as_view(),name="cancel-booking"),
 ]
